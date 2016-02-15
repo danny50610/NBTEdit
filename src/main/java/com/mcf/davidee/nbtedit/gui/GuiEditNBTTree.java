@@ -42,8 +42,11 @@ public class GuiEditNBTTree extends GuiScreen{
 		Keyboard.enableRepeatEvents(true);
 		buttonList.clear();
 		guiTree.initGUI(width,height,height-35);
-		this.buttonList.add(new GuiButton(1, width / 4 - 100, this.height -27, "Save"));
-		this.buttonList.add(new GuiButton(0, width *3 / 4 -100, this.height -27, "Quit"));
+
+        int buttonWidth = width / 3 - 100;
+		this.buttonList.add(new GuiButton(1, 0 * width / 3 + 50, this.height - 27, buttonWidth, 20, "Save"));
+		this.buttonList.add(new GuiButton(0, 1 * width / 3 + 50, this.height - 27, buttonWidth, 20, "Quit"));
+		this.buttonList.add(new GuiButton(2, 2 * width / 3 + 50, this.height - 27, buttonWidth, 20, "JSON"));
 	}
 	
 	public void onGuiClosed() {
@@ -98,6 +101,9 @@ public class GuiEditNBTTree extends GuiScreen{
 			case 1:
 				quitWithSave();
 				break;
+            case 2:
+                //TODO: 複製成JSON
+                break;
 			default:
 				quitWithoutSaving();
 				break;
