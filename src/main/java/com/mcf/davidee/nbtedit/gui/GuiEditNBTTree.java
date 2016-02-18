@@ -47,10 +47,10 @@ public class GuiEditNBTTree extends GuiScreen{
 		buttonList.clear();
 		guiTree.initGUI(width,height,height-35);
 
-        int buttonWidth = width / 3 - 100;
-		this.buttonList.add(new GuiButton(1, 0 * width / 3 + 50, this.height - 27, buttonWidth, 20, "Save"));
-		this.buttonList.add(new GuiButton(0, 1 * width / 3 + 50, this.height - 27, buttonWidth, 20, "Quit"));
-		this.buttonList.add(new GuiButton(2, 2 * width / 3 + 50, this.height - 27, buttonWidth, 20, "JSON"));
+        int buttonWidth = width / 3 - 50;
+		this.buttonList.add(new GuiButton(1, 0 * width / 3 + 25, this.height - 27, buttonWidth, 20, "Save"));
+		this.buttonList.add(new GuiButton(0, 1 * width / 3 + 25, this.height - 27, buttonWidth, 20, "Quit"));
+		this.buttonList.add(new GuiButton(2, 2 * width / 3 + 25, this.height - 27, buttonWidth, 20, "JSON"));
 	}
 	
 	public void onGuiClosed() {
