@@ -13,6 +13,10 @@ import com.mcf.davidee.nbtedit.nbt.NBTTree;
 import com.mcf.davidee.nbtedit.packets.EntityNBTPacket;
 import com.mcf.davidee.nbtedit.packets.TileNBTPacket;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+
 public class GuiEditNBTTree extends GuiScreen{
 
 	public final int entityOrX, y, z;
@@ -102,7 +106,8 @@ public class GuiEditNBTTree extends GuiScreen{
 				quitWithSave();
 				break;
             case 2:
-                //TODO: 複製成JSON
+				Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+				clipboard.setContents(new StringSelection(guiTree.getNBTTree().getRoot().getObject().getNBT().toString()), null);
                 break;
 			default:
 				quitWithoutSaving();
